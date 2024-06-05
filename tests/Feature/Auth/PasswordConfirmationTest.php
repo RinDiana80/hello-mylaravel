@@ -3,6 +3,7 @@
 namespace Tests\Feature\Auth;
 
 use App\Models\User;
+<<<<<<< HEAD
 use Livewire\Volt\Volt;
 
 test('confirm password screen can be rendered', function () {
@@ -44,3 +45,44 @@ test('password is not confirmed with invalid password', function () {
         ->assertNoRedirect()
         ->assertHasErrors('password');
 });
+=======
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
+
+class PasswordConfirmationTest extends TestCase
+{
+    use RefreshDatabase;
+
+    public function test_confirm_password_screen_can_be_rendered(): void
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->get('/confirm-password');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_password_can_be_confirmed(): void
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->post('/confirm-password', [
+            'password' => 'password',
+        ]);
+
+        $response->assertRedirect();
+        $response->assertSessionHasNoErrors();
+    }
+
+    public function test_password_is_not_confirmed_with_invalid_password(): void
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs($user)->post('/confirm-password', [
+            'password' => 'wrong-password',
+        ]);
+
+        $response->assertSessionHasErrors();
+    }
+}
+>>>>>>> 9d11af938eec3fd39e6b40ea7b3504843705655f

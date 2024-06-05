@@ -13,6 +13,7 @@ class PostsSeeder extends Seeder
      */
     public function run(): void
     {
+<<<<<<< HEAD
         DB::table('posts')->truncate();
 
         foreach(range(1,100) as $key){
@@ -27,5 +28,18 @@ class PostsSeeder extends Seeder
 
         DB::table('posts') ->insert($data);
 
+=======
+        DB::table('post');
+
+        foreach(range(1,100) as $key){
+            $data[] = [
+                'title' => 'Title'.$key,
+                'content' => 'Content'.$key,
+                'created_at' => now(),
+                'updated_at' => now()
+            ];
+        }
+        DB::table('post')->insert($data);
+>>>>>>> 9d11af938eec3fd39e6b40ea7b3504843705655f
     }
 }

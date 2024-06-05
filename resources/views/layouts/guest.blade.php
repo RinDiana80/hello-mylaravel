@@ -17,7 +17,11 @@
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>
+<<<<<<< HEAD
                 <a href="/" wire:navigate>
+=======
+                <a href="/">
+>>>>>>> 9d11af938eec3fd39e6b40ea7b3504843705655f
                     <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
                 </a>
             </div>

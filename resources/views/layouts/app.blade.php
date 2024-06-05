@@ -16,16 +16,27 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+<<<<<<< HEAD
             <livewire:layout.navigation />
 
             <!-- Page Heading -->
             @if (isset($header))
+=======
+            @include('layouts.navigation')
+
+            <!-- Page Heading -->
+            @isset($header)
+>>>>>>> 9d11af938eec3fd39e6b40ea7b3504843705655f
                 <header class="bg-white dark:bg-gray-800 shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
+<<<<<<< HEAD
             @endif
+=======
+            @endisset
+>>>>>>> 9d11af938eec3fd39e6b40ea7b3504843705655f
 
             <!-- Page Content -->
             <main>
